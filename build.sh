@@ -10,4 +10,12 @@ go build -ldflags "-X main.version=${VERSION}@${BUILD}"
 ## test version
 ./gen-latex-eq -version
 ## test function
-./gen-latex-eq < test.list
+## latex-eq 파일 만들기
+cat <<EOF > latex-eq@${BUILD}
+2n@${BUILD}.svg          = 2n
+factorial@${BUILD}.svg   = n!= \prod_{k=1}^{n} = n \cdot (n-1) \cdot (n-2) \cdot \cdot \cdot \cdot \cdot 3 \cdot 2 \cdot 1
+EOF
+## 테스트 gen-latex-eq을 실행하여 latex-eq파일을 latex 수식 이미지로 변환
+./gen-latex-eq < latex-eq@${BUILD}
+## latex-eq 파일제거
+rm *@${BUILD}*
