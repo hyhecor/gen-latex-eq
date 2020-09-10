@@ -18,14 +18,14 @@ import (
 )
 
 var (
-	version       = "0.0.0"
+	version = "0.0.0"
 )
 
 // Args is
 type Args struct {
 	help         bool
 	version      bool
-	convertorURL string
+	converterURL string
 }
 
 var (
@@ -40,7 +40,7 @@ func init() {
 
 	flag.BoolVar(&args.help, "version", false, "version")
 	flag.BoolVar(&args.help, "h", false, "help")
-	flag.StringVar(&args.convertorURL, "convertor", "https://latex.codecogs.com/svg.latex?", "")
+	flag.StringVar(&args.converterURL, "converter", "https://latex.codecogs.com/svg.latex?", "online converter")
 
 	flag.Parse() // flag.Parse
 
@@ -113,7 +113,7 @@ LOOP_SCANNER:
 		}
 	}()
 
-	fnStartWorker := WorkerFactory(args.convertorURL, in, out)
+	fnStartWorker := WorkerFactory(args.converterURL, in, out)
 	var wg sync.WaitGroup
 
 	for index := 0; index < runtime.NumCPU(); index++ {
