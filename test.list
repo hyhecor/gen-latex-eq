@@ -1,4 +1,0 @@
-﻿;THIS IS COMMENT
-
-res_test/2n.svg          = 2n
-res_test/factorial.svg   = n!= \prod_{k=1}^{n} = n \cdot (n-1) \cdot (n-2) \cdot \cdot \cdot \cdot \cdot 3 \cdot 2 \cdot 1
