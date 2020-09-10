@@ -42,6 +42,7 @@ func init() {
 		flag.PrintDefaults()
 	}
 
+	flag.BoolVar(&args.help, "version", false, "version")
 	flag.BoolVar(&args.help, "h", false, "help")
 	flag.StringVar(&args.convertorURL, "convertor", "https://latex.codecogs.com/svg.latex?", "")
 
