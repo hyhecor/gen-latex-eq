@@ -7,8 +7,9 @@ BUILD=`git log -1 --pretty=format:%h`
 ## go build
 go build -ldflags "-X main.version=${VERSION}@${BUILD}" 
 
-## test version
-./gen-latex-eq -version
+## test help
+./gen-latex-eq -h
+
 ## test function
 ## latex-eq 파일 만들기
 cat <<EOF > latex-eq@${BUILD}

@@ -49,7 +49,7 @@ func init() {
 		os.Exit(1)
 	}
 	if args.version {
-		flag.Usage()
+		fmt.Fprintf(flag.CommandLine.Output(), "%s", version)
 		os.Exit(1)
 	}
 
